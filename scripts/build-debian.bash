@@ -13,7 +13,7 @@ do
   cd $ROOT_DIR/$PACKAGE || continue
 
   # Install required dependencies
-  rosdep install -y --rosdistro "$ROS2_DISTRO" --from-paths . || exit $?
+  rosdep install -y --rosdistro "$ROS2_DISTRO" --ignore-src --from-paths . || exit $?
 
   # Source ROS 2 environment
   source /opt/ros/$ROS2_DISTRO/setup.bash || exit $?
